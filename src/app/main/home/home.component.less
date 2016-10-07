@@ -1,0 +1,55 @@
+@import '../../../less/variables';
+
+#splash {
+    background-image: url('assets/img/keyboard.jpeg');
+    width: 100%;
+    float: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    #jumbotron-container {
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        display: table;
+
+        .jumbotron {
+            background-color: transparent;
+            margin: auto;
+            padding: 0;
+            display: table-cell;
+            vertical-align: middle;
+
+            ::selection {
+                background: transparent;
+            }
+
+            ::-moz-selection {
+                background: transparent;
+            }
+
+            h1, h4 {
+                color: @headerFontColor;
+            }
+
+            h1 {
+                margin: 10px 0;
+                font-size: 70px;
+                font-weight: lighter;
+            }
+
+            #contact, #profile {
+                font-size: 18px;
+            }
+
+            #contact {
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+#intro {
+    float: left;
+    width: 100%;
+}

@@ -1,0 +1,52 @@
+@import './variables';
+
+@minButtonHeight: 40px;
+
+button.btn {
+  min-height: @minButtonHeight;
+  padding: 6px 15px;
+  font-weight: bold;
+  font-size: 16px;
+  outline: 0 !important;
+  -webkit-transition: all @transitionTime ease;
+  -moz-transition: all @transitionTime ease;
+  -ms-transition: all @transitionTime ease;
+  -o-transition: all @transitionTime ease;
+  transition: all @transitionTime ease;
+  transition: all @transitionTime ease;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  border-style: solid;
+  border-width: 2px;
+
+  &:active {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+}
+
+button.btn.btn-primary {
+  background-color: @accent1;
+  color: white;
+  border-color: @accent1;
+
+  &:hover {
+    background-color: white;
+    border-color: white;
+    color: @accent1;
+  }
+}
+
+button.btn.btn-default {
+  border-color: @accent1;
+  background-color: transparent;
+  color: @accent1;
+
+  &:hover {
+    background-color: @accent1;
+    border-color: @accent1;
+    color: white;
+  }
+}

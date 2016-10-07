@@ -1,0 +1,17 @@
+@import '../less/variables';
+
+#root {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    -webkit-transition: all @transitionTime ease;
+    -moz-transition: all @transitionTime ease;
+    -ms-transition: all @transitionTime ease;
+    -o-transition: all @transitionTime ease;
+    transition: all @transitionTime ease;
+    left: -@sidebarWidth;
+}
+
+#root.sidebar-collapsed {
+    left: 0;
+}

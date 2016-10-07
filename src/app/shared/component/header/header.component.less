@@ -1,0 +1,122 @@
+@import '../../../../less/variables';
+
+header.navbar {
+    background-color: white;
+    position: fixed;
+    height: @headerHeight;
+    margin-bottom: 0;
+    width: 100%;
+    font-family: @font-family-heading;
+    border: 0;
+    border-bottom: 1px solid @accent1;
+    z-index: 1;
+    -webkit-transition: all @transitionTime ease;
+    -moz-transition: all @transitionTime ease;
+    -ms-transition: all @transitionTime ease;
+    -o-transition: all @transitionTime ease;
+    transition: all @transitionTime ease;
+
+    a {
+        color: @primary1;
+        padding: 25px 15px;
+        -webkit-transition: all @transitionTime ease;
+        -moz-transition: all @transitionTime ease;
+        -ms-transition: all @transitionTime ease;
+        -o-transition: all @transitionTime ease;
+        transition: all @transitionTime ease;
+    }
+
+    a:hover, a:focus {
+        -webkit-transition: all @transitionTime ease;
+        -moz-transition: all @transitionTime ease;
+        -ms-transition: all @transitionTime ease;
+        -o-transition: all @transitionTime ease;
+        transition: all @transitionTime ease;
+        background-color: transparent;
+        outline: 0;
+    }
+
+    .navbar-header {
+        a.navbar-brand {
+            text-transform: none;
+            font-weight: normal;
+            font-size: 20px;
+            height: 100%;
+            -webkit-transition: all @transitionTime ease;
+            -moz-transition: all @transitionTime ease;
+            -ms-transition: all @transitionTime ease;
+            -o-transition: all @transitionTime ease;
+            transition: all @transitionTime ease;
+        }
+
+        button.navbar-toggle {
+            padding: 13px 10px;
+
+            .icon-bar {
+                background-color: @primary1;
+                width: 30px;
+            }
+
+            .icon-bar+.icon-bar {
+                margin-top: 10px;
+            }
+        }
+    }
+
+    div.collapse.navbar-collapse {
+        position: relative;
+
+        ul.nav.navbar-nav {
+            position: absolute;
+            width: auto;
+            right: 0;
+
+            li {
+                margin-left: 30px;
+                text-align: center;
+
+                a {
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }
+
+                a:hover {
+                    color: @accent1;
+                    background-color: transparent;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+header.navbar.exploded {
+    background-color: transparent;
+    border: 0;
+
+    a, a:hover {
+        color: white;
+    }
+
+    .navbar-header {
+
+        a.navbar-brand {
+            color: transparent;
+        }
+
+        button.navbar-toggle .icon-bar {
+            background-color: @headerFontColor;
+        }
+    }
+
+    div.collapse.navbar-collapse {
+        ul.nav.navbar-nav {
+            width: 100%;
+
+            li {
+                margin-left: 0;
+                width: 25%;
+            }
+        }
+    }
+}

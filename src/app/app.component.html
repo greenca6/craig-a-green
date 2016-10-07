@@ -1,0 +1,13 @@
+<div id="root" class="{{sidebarCollapsed ? 'sidebar-collapsed' : ''}}">
+
+    <cag-sidebar [sidebarCollapsed]="sidebarCollapsed"></cag-sidebar>
+
+    <cag-header [sidebarCollapsed]="sidebarCollapsed" (toggle)="sidebarCollapsed = $event" [headerExploded]="headerExploded"></cag-header>
+
+    <div id="main">
+        <router-outlet></router-outlet>
+    </div>
+
+
+    <cag-footer></cag-footer>
+</div>

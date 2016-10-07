@@ -1,0 +1,18 @@
+@import './variables';
+@import './type';
+@import './forms';
+@import './icons';
+
+body {
+  background-color: @primary2;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+::selection {
+  background: rgba(red(@accent1), green(@accent1), blue(@accent1), 0.2);
+}
+
+::-moz-selection {
+  background: rgba(red(@accent1), green(@accent1), blue(@accent1), 0.2);
+}

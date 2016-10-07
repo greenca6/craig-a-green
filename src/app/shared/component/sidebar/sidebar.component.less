@@ -1,0 +1,53 @@
+@import '../../../../less/variables';
+
+#sidebar {
+    background-color: @primary3;
+    height: 100%;
+    width: @sidebarWidth;
+    position: fixed;
+    right: -@sidebarWidth;
+    -webkit-transition: all @transitionTime ease;
+    -moz-transition: all @transitionTime ease;
+    -ms-transition: all @transitionTime ease;
+    -o-transition: all @transitionTime ease;
+    transition: all @transitionTime ease;
+    font-family: @font-family-heading;
+    right: 0;
+
+    ul {
+        padding: 0 15px;
+        list-style-type: none;
+
+        li {
+            border-bottom: 2px solid lighten(@primary3, 3%);
+
+            a {
+                text-align: center;
+                display: block;
+                width: 100%;
+                padding: 20px 10px;
+                color: darken(@headerFontColor, 10%);
+                font-size: 18px;
+                -webkit-transition: all @transitionTime ease;
+                -moz-transition: all @transitionTime ease;
+                -ms-transition: all @transitionTime ease;
+                -o-transition: all @transitionTime ease;
+                transition: all @transitionTime ease;
+
+                &:hover {
+                    text-decoration: none;
+                    cursor: pointer;
+                    color: @accent1;
+                }
+
+                &:active, &:focus {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+#sidebar.collapsed {
+    right: -@sidebarWidth;
+}

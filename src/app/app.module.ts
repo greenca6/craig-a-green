@@ -2,11 +2,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { MaterialModule } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { HomeComponent, AboutComponent, BlogComponent, ContactComponent, ProfileComponent } from './main';
+import {
+    HomeComponent,
+    AboutComponent,
+    BlogComponent,
+    BlogHomeComponent,
+    SoftwareBlogComponent,
+    ContactComponent,
+    ProfileComponent } from './main';
+
 
 @NgModule({
     declarations: [
@@ -14,6 +23,8 @@ import { HomeComponent, AboutComponent, BlogComponent, ContactComponent, Profile
         HomeComponent,
         AboutComponent,
         BlogComponent,
+        BlogHomeComponent,
+        SoftwareBlogComponent,
         ContactComponent,
         ProfileComponent
     ],
@@ -21,7 +32,8 @@ import { HomeComponent, AboutComponent, BlogComponent, ContactComponent, Profile
         BrowserModule,
         FormsModule,
         HttpModule,
-        AppRoutingModule
+        AppRoutingModule,
+        MaterialModule.forRoot()
     ],
     providers: [],
     bootstrap: [AppComponent]

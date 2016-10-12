@@ -7,7 +7,8 @@
 @accent1: #71D161;
 
 // Font Colors
-@headerFontColor: contrast(@primary1);
+@primaryContrast: contrast(@primary1);
+@headerFontColor: lighten(@primaryContrast, 10%);
 @mainFontColor: darken(@headerFontColor, 10%);
 
 // Fonts

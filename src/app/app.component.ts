@@ -9,24 +9,16 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
     private sidebarCollapsed: boolean = true;
     private headerExploded: boolean = true;
-    private scrolledToTop: boolean = true;
 
     constructor(private router: Router) { }
-
-    isAtTop(): boolean {
-        return jQuery(window).scrollTop() === 0;
-    }
 
     ngOnInit() {
         this.router.events.subscribe((route) => {
             this.headerExploded = (route.url === '/');
-            this.scrolledToTop = (route.url === '/') ? false : this.isAtTop();
         });
 
         // Scroll watcher
         jQuery(window).on('scroll', () => {
-            this.scrolledToTop = (this.router.url === '/') ? false : this.isAtTop();
-
             if (this.router.url !== '/')
                 return false;
 

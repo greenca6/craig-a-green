@@ -1,6 +1,6 @@
 @import '../less/variables';
 
-@footerTextColor: darken(@mainFontColor, 15%);
+@footerTextColor: darken(@mainFontColor, 10%);
 
 // Root div element
 #root {
@@ -15,6 +15,7 @@
 
     #main {
         padding-top: @headerHeight;
+        background-color: @primary2;
     }
 }
 
@@ -56,7 +57,7 @@
 
 // Header
 header.navbar {
-    background-color: lighten(@primary1, 12%);
+    background-color: lighten(@primary1, 10%);
     position: fixed;
     height: @headerHeight;
     margin-bottom: 0;
@@ -70,9 +71,9 @@ header.navbar {
     -ms-transition: all @transitionTime ease;
     -o-transition: all @transitionTime ease;
     transition: all @transitionTime ease;
-    -webkit-box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow:    0 5px 12px rgba(0, 0, 0, 0.15);
-    box-shadow:         0 5px 12px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow:    0 2px 5px rgba(0, 0, 0, 0.15);
+    box-shadow:         0 2px 5px rgba(0, 0, 0, 0.15);
 
     a {
         color: @headerFontColor;
@@ -105,6 +106,9 @@ header.navbar {
             -ms-transition: all @transitionTime ease;
             -o-transition: all @transitionTime ease;
             transition: all @transitionTime ease;
+            cursor: pointer;
+            font-weight: bold;
+            color: @accent1;
         }
 
         button.navbar-toggle {
@@ -181,14 +185,6 @@ header.navbar.exploded {
             }
         }
     }
-}
-
-// Class for removing the shadow from the header if the user it at the top of the page
-#root.top header.navbar:not(.header-exploded) {
-    -webkit-box-shadow: 0 5px 12px rgba(0, 0, 0, 0);
-    -moz-box-shadow:    0 5px 12px rgba(0, 0, 0, 0);
-    box-shadow:         0 5px 12px rgba(0, 0, 0, 0);
-    border-bottom: 1px solid @accent1;
 }
 
 // Sidebar

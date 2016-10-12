@@ -1,9 +1,9 @@
 @import './variables';
 
-@font-heading-color: #ccc;
-@font-body-color: white;
+@font-heading-color: @mainFontColor;
+@font-body-color: lighten(@mainFontColor, 10%);
 
-@font-size-base:          16px;
+@font-size-base:          17px;
 @font-size-large:         ceil((@font-size-base * 1.1));
 @font-size-small:         ceil((@font-size-base * 0.85));
 
@@ -48,5 +48,5 @@ body {
 
 .page-header {
   margin: 30px 0 20px;
-  border-bottom: 1px solid lighten(@primary2, 5%);
+  border-bottom: 1px solid darken(@primary1, 5%);
 }

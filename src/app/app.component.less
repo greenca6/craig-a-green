@@ -1,5 +1,8 @@
 @import '../less/variables';
 
+@footerTextColor: darken(@mainFontColor, 15%);
+
+// Root div element
 #root {
     height: 100%;
     width: 100%;
@@ -9,9 +12,310 @@
     -ms-transition: all @transitionTime ease;
     -o-transition: all @transitionTime ease;
     transition: all @transitionTime ease;
-    left: -@sidebarWidth;
+
+    #main {
+        padding-top: @headerHeight;
+    }
 }
 
+// Root div element
 #root.sidebar-collapsed {
     left: 0;
+
+    #main {
+        padding-top: @headerHeight;
+    }
+
+    #overlay {
+        background-color: rgba(0, 0, 0, 0);
+        -webkit-transition: all @transitionTime ease;
+        -moz-transition: all @transitionTime ease;
+        -ms-transition: all @transitionTime ease;
+        -o-transition: all @transitionTime ease;
+        transition: all @transitionTime ease;
+    }
+}
+
+// Overlay element to dim 'background'
+#overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    -webkit-transition: all @transitionTime ease;
+    -moz-transition: all @transitionTime ease;
+    -ms-transition: all @transitionTime ease;
+    -o-transition: all @transitionTime ease;
+    transition: all @transitionTime ease;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#root:not(.sidebar-collapsed) #overlay{
+    z-index: 3;
+}
+
+// Header
+header.navbar {
+    background-color: lighten(@primary1, 12%);
+    position: fixed;
+    height: @headerHeight;
+    margin-bottom: 0;
+    width: 100%;
+    border-radius: 0;
+    font-family: @font-family-heading;
+    border: 0;
+    z-index: 1;
+    -webkit-transition: all @transitionTime ease;
+    -moz-transition: all @transitionTime ease;
+    -ms-transition: all @transitionTime ease;
+    -o-transition: all @transitionTime ease;
+    transition: all @transitionTime ease;
+    -webkit-box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow:    0 5px 12px rgba(0, 0, 0, 0.15);
+    box-shadow:         0 5px 12px rgba(0, 0, 0, 0.15);
+
+    a {
+        color: @headerFontColor;
+        padding: 25px 15px;
+        -webkit-transition: all @transitionTime ease;
+        -moz-transition: all @transitionTime ease;
+        -ms-transition: all @transitionTime ease;
+        -o-transition: all @transitionTime ease;
+        transition: all @transitionTime ease;
+    }
+
+    a:hover, a:focus {
+        -webkit-transition: all @transitionTime ease;
+        -moz-transition: all @transitionTime ease;
+        -ms-transition: all @transitionTime ease;
+        -o-transition: all @transitionTime ease;
+        transition: all @transitionTime ease;
+        background-color: transparent;
+        outline: 0;
+    }
+
+    .navbar-header {
+        a.navbar-brand {
+            text-transform: none;
+            font-weight: normal;
+            font-size: 20px;
+            height: 100%;
+            -webkit-transition: all @transitionTime ease;
+            -moz-transition: all @transitionTime ease;
+            -ms-transition: all @transitionTime ease;
+            -o-transition: all @transitionTime ease;
+            transition: all @transitionTime ease;
+        }
+
+        button.navbar-toggle {
+            padding: 13px 10px;
+
+            .icon-bar {
+                background-color: @headerFontColor;
+                width: 30px;
+            }
+
+            .icon-bar+.icon-bar {
+                margin-top: 10px;
+            }
+        }
+    }
+
+    div.collapse.navbar-collapse {
+        position: relative;
+
+        ul.nav.navbar-nav {
+            position: absolute;
+            width: auto;
+            right: 0;
+
+            li {
+                margin-left: 30px;
+                text-align: center;
+
+                a {
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }
+
+                a:hover {
+                    color: @accent1;
+                    background-color: transparent;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+// 'Exploded' header - expands menu items to stretch 100% width (shown this way on Home page)
+header.navbar.exploded {
+    background-color: transparent;
+    border: 0;
+    -webkit-box-shadow: 0 3px 5px transparent;
+    -moz-box-shadow:    0 3px 5px transparent;
+    box-shadow:         0 3px 5px transparent;
+
+    a, a:hover {
+        color: white;
+    }
+
+    .navbar-header {
+
+        a.navbar-brand {
+            color: transparent;
+        }
+
+        button.navbar-toggle .icon-bar {
+            background-color: @primary1;
+        }
+    }
+
+    div.collapse.navbar-collapse {
+        ul.nav.navbar-nav {
+            width: 100%;
+
+            li {
+                margin-left: 0;
+                width: 25%;
+            }
+        }
+    }
+}
+
+// Sidebar
+#sidebar {
+    background-color: @primary3;
+    height: 100%;
+    width: @sidebarWidth;
+    position: fixed;
+    right: -@sidebarWidth;
+    -webkit-transition: all @transitionTime ease;
+    -moz-transition: all @transitionTime ease;
+    -ms-transition: all @transitionTime ease;
+    -o-transition: all @transitionTime ease;
+    transition: all @transitionTime ease;
+    font-family: @font-family-heading;
+    right: 0;
+    z-index: 100;
+    -webkit-box-shadow: -5px 0px 12px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow:    -5px 0px 12px rgba(0, 0, 0, 0.15);
+    box-shadow:         -5px 0px 12px rgba(0, 0, 0, 0.15);
+
+    button {
+        background-color: transparent;
+        border: 0 solid transparent;
+        outline: 0
+    }
+
+    ul {
+        padding: 0 15px;
+        list-style-type: none;
+
+        li {
+            border-bottom: 2px solid lighten(@primary3, 3%);
+
+            a {
+                text-align: center;
+                display: block;
+                width: 100%;
+                padding: 20px 10px;
+                color: darken(@headerFontColor, 10%);
+                font-size: 18px;
+                -webkit-transition: all @transitionTime ease;
+                -moz-transition: all @transitionTime ease;
+                -ms-transition: all @transitionTime ease;
+                -o-transition: all @transitionTime ease;
+                transition: all @transitionTime ease;
+
+                &:hover {
+                    text-decoration: none;
+                    cursor: pointer;
+                    color: @accent1;
+                }
+
+                &:active, &:focus {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+// Sidebar collapsed
+#root.sidebar-collapsed #sidebar {
+    right: -@sidebarWidth;
+    -webkit-box-shadow: 0 5px 12px rgba(0, 0, 0, 0);
+    -moz-box-shadow:    0 5px 12px rgba(0, 0, 0, 0);
+    box-shadow:         0 5px 12px rgba(0, 0, 0, 0);
+}
+
+// Footer
+footer {
+    background-color: @primary1;
+    border-top: 1px solid @accent1;
+    float: left;
+    width: 100%;
+    padding: 15px 0;
+
+    a.social-media-icon {
+        float: left;
+        margin-right: 10px;
+    }
+
+    a {
+        color: @footerTextColor;
+        -webkit-transition: all @transitionTime ease;
+        -moz-transition: all @transitionTime ease;
+        -ms-transition: all @transitionTime ease;
+        -o-transition: all @transitionTime ease;
+        transition: all @transitionTime ease;
+
+        &:hover {
+            color: @accent1;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+
+    div.row > div.col-md-6 {
+        div.footer-section {
+            margin-top: 20px;
+            border-right: 1px solid lighten(@primary1, 5%);
+            padding-bottom: 20px;
+
+            @media @phone-sm {
+                border-right: 0;
+                border-bottom: 1px solid lighten(@primary1, 5%);
+            }
+            @media @phone-lg {
+                border-right: 0;
+                border-bottom: 1px solid lighten(@primary1, 5%);
+            }
+            @media @tablet {
+                border-right: 0;
+                border-bottom: 1px solid lighten(@primary1, 5%);
+            }
+        }
+
+        &:first-of-type {
+            div.footer-section {
+                @media @phone-sm {
+                    margin-top: 0;
+                }
+                @media @phone-lg {
+                    margin-top: 0;
+                }
+                @media @tablet {
+                    margin-top: 0;
+                }
+            }
+        }
+
+        &:last-of-type {
+            div.footer-section {
+                border-right: 0;
+                border-bottom: 0;
+            }
+        }
+    }
 }

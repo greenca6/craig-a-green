@@ -6,15 +6,11 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { SidebarComponent, HeaderComponent, FooterComponent } from './shared/component';
 import { HomeComponent, AboutComponent, BlogComponent, ContactComponent, ProfileComponent } from './main';
 
 @NgModule({
     declarations: [
         AppComponent,
-        SidebarComponent,
-        HeaderComponent,
-        FooterComponent,
         HomeComponent,
         AboutComponent,
         BlogComponent,

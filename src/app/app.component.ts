@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,37 +6,27 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['app.component.less']
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements OnInit {
     private sidebarCollapsed: boolean = true;
-    private headerExploded: boolean = false;
+    private headerExploded: boolean = true;
 
     constructor(private router: Router) { }
 
+    toggleCollapse(): void {
+        this.sidebarCollapsed = !this.sidebarCollapsed;
+    }
+
     ngOnInit() {
-        this.router.events.subscribe(() => {
-            console.log('route...');
-            this.headerExploded = this.getHeaderIsExploded();
+        this.router.events.subscribe((route) => this.headerExploded = (route.url === '/'));
+
+        // Explode the header if the scroll location is past the first 1/4 of the window,
+        // and the user is on the home page
+        jQuery(window).on('scroll', () => {
+            if (this.router.url !== '/')
+                return false;
+
+            let quarterHeight: number = window.innerHeight / 4;
+            this.headerExploded = jQuery(window).scrollTop() <= quarterHeight;
         });
-
-        jQuery(window).scroll(() => {
-            console.log('scroll...');
-            this.headerExploded = this.getHeaderIsExploded();
-        });
-    }
-
-    ngOnDestroy() {
-        jQuery(window).off('scroll');
-    }
-
-    getHeaderIsExploded(): boolean {
-        if (this.router.url !== '/')
-            return false;
-
-        let quarterHeight: number = window.innerHeight / 4;
-
-        if (jQuery(window).scrollTop() >= quarterHeight)
-            this.headerExploded = true;
-        else
-            this.headerExploded = false;
     }
 }

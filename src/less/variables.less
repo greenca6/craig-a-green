@@ -1,14 +1,14 @@
 // Primary Colors
-@primary1: #333;
-@primary2: #555;
-@primary3: #888;
+@primary1: #eee;
+@primary2: lighten(@primary1, 10%);
+@primary3: lighten(@primary1, 20%);
 
 // Accent Colors
 @accent1: #71D161;
 
 // Font Colors
-@headerFontColor: white;
-@mainFontColor: #ccc;
+@headerFontColor: contrast(@primary1);
+@mainFontColor: darken(@headerFontColor, 10%);
 
 // Fonts
 @font-family-heading: 'Raleway', sans-serif;

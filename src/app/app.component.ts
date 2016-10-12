@@ -9,24 +9,33 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
     private sidebarCollapsed: boolean = true;
     private headerExploded: boolean = true;
+    private scrolledToTop: boolean = true;
 
     constructor(private router: Router) { }
 
-    toggleCollapse(): void {
-        this.sidebarCollapsed = !this.sidebarCollapsed;
+    isAtTop(): boolean {
+        return jQuery(window).scrollTop() === 0;
     }
 
     ngOnInit() {
-        this.router.events.subscribe((route) => this.headerExploded = (route.url === '/'));
+        this.router.events.subscribe((route) => {
+            this.headerExploded = (route.url === '/');
+            this.scrolledToTop = (route.url === '/') ? false : this.isAtTop();
+        });
 
-        // Explode the header if the scroll location is past the first 1/4 of the window,
-        // and the user is on the home page
+        // Scroll watcher
         jQuery(window).on('scroll', () => {
+            this.scrolledToTop = (this.router.url === '/') ? false : this.isAtTop();
+
             if (this.router.url !== '/')
                 return false;
 
             let quarterHeight: number = window.innerHeight / 4;
             this.headerExploded = jQuery(window).scrollTop() <= quarterHeight;
         });
+    }
+
+    toggleCollapse(): void {
+        this.sidebarCollapsed = !this.sidebarCollapsed;
     }
 }

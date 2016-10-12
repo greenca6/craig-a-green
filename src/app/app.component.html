@@ -1,4 +1,4 @@
-<div id="root" class="{{sidebarCollapsed ? 'sidebar-collapsed' : ''}}">
+<div id="root" class="{{sidebarCollapsed ? 'sidebar-collapsed' : ''}} {{scrolledToTop ? 'top' : ''}}">
 
     <div id="sidebar">
         <button (click)="toggleCollapse()" class="btn">
@@ -64,12 +64,12 @@
                         <h5>Navigate</h5>
                         <div class="row">
                             <div class="col-xs-6">
-                                <a>About</a><br />
-                                <a>Profile</a>
+                                <a routerLink="/about">About</a><br />
+                                <a routerLink="/profile">Profile</a>
                             </div>
                             <div class="col-xs-6">
-                                <a>Blog</a><br />
-                                <a>Contact</a>
+                                <a routerLink="/blog">Blog</a><br />
+                                <a routerLink="/contact">Contact</a>
                             </div>
                         </div>
                     </div>

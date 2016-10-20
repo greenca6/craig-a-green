@@ -57,7 +57,7 @@
 
 // Header
 header.navbar {
-    background-color: lighten(@primary1, 10%);
+    background-color: @accent2;
     position: fixed;
     height: @headerHeight;
     margin-bottom: 0;
@@ -108,7 +108,7 @@ header.navbar {
             transition: all @transitionTime ease;
             cursor: pointer;
             font-weight: bold;
-            color: @accent1;
+            color: @headerFontColor;
         }
 
         button.navbar-toggle {
@@ -139,12 +139,13 @@ header.navbar {
 
                 a {
                     font-weight: bold;
+                    color: @headerFontColor;
                     text-transform: uppercase;
                 }
 
                 a:hover {
-                    color: @accent1;
-                    background-color: transparent;
+                    color: @headerFontColor;
+                    background-color: lighten(@accent2, 5%);
                     cursor: pointer;
                 }
             }
@@ -159,10 +160,6 @@ header.navbar.exploded {
     -webkit-box-shadow: 0 3px 5px transparent;
     -moz-box-shadow:    0 3px 5px transparent;
     box-shadow:         0 3px 5px transparent;
-
-    a, a:hover {
-        color: white;
-    }
 
     .navbar-header {
 
@@ -182,6 +179,15 @@ header.navbar.exploded {
             li {
                 margin-left: 0;
                 width: 25%;
+
+                a {
+                    color: @headerFontColor;
+                }
+
+                a:hover {
+                    color: @accent2;
+                    background-color: transparent;
+                }
             }
         }
     }
@@ -257,7 +263,7 @@ header.navbar.exploded {
 // Footer
 footer {
     background-color: @primary1;
-    border-top: 1px solid @accent1;
+    border-top: 2px solid @accent2;
     float: left;
     width: 100%;
     padding: 15px 0;

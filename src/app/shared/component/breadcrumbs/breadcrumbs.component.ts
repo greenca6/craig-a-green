@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { Breadcrumb } from '../../data/breadcrumb';
+
 @Component({
     selector: 'cag-breadcrumbs',
     templateUrl: './breadcrumbs.component.html',
@@ -8,24 +10,23 @@ import { Router } from '@angular/router';
 })
 export class BreadcrumbsComponent {
     @Input() baseRoute: string;
+    @Input() labelMap: Map<string, string>;
+    @Input() childrenCrumbs: Breadcrumb;
 
-    private crumbs: string[] = [];
+    private baseCrumb: Breadcrumb;
+
 
     constructor(private router: Router) { }
 
-    ngOnInit() {
-        if (!this.baseRoute || this.baseRoute.indexOf('/') !== 0)
-            throw new Error('Invalid base route: route can not be blank, and must start with \'/\'');
+    rebuildRoutes(endCrumbUrl: string) {
 
-        // Add the base crumb
-        this.crumbs.push(this.baseRoute);
-
-        this.router.events.subscribe(route => {
-            // Do something
-        });
     }
 
-    onCrumbClick(crumb: string) {
-        this.router.navigate([crumb]);
+    getBreadCrumb(route: string): Breadcrumb {
+        return null;
+    }
+
+    ngOnInit() {
+
     }
 }

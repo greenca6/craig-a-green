@@ -16,6 +16,9 @@ import {
     ContactComponent,
     ProfileComponent } from './main';
 
+import { BreadcrumbsComponent } from './shared/component';
+
+import './shared/util/string-utils';
 
 @NgModule({
     declarations: [
@@ -26,7 +29,8 @@ import {
         BlogHomeComponent,
         SoftwareBlogComponent,
         ContactComponent,
-        ProfileComponent
+        ProfileComponent,
+        BreadcrumbsComponent
     ],
     imports: [
         BrowserModule,

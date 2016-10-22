@@ -1,0 +1,7 @@
+<cag-spinner *ngIf="loading"></cag-spinner>
+
+<template [ngIf]="!loading">
+    <h1 class="page-header">{{topic.name}}</h1>
+    <p>{{topic.description}}</p>
+</template>
+

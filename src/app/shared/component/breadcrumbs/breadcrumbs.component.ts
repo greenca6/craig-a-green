@@ -1,5 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { Subscription } from 'rxjs';
 
 import { Breadcrumb } from '../../data/breadcrumb';
 
@@ -8,24 +10,37 @@ import { Breadcrumb } from '../../data/breadcrumb';
     templateUrl: './breadcrumbs.component.html',
     styleUrls: ['./breadcrumbs.component.less']
 })
-export class BreadcrumbsComponent {
+export class BreadcrumbsComponent implements OnInit, OnDestroy{
     @Input() baseRoute: string;
     @Input() labelMap: Map<string, string>;
 
     private baseCrumb: Breadcrumb;
     private childrenCrumbs: Breadcrumb[];
 
+    private routeSubscription: Subscription;
+
 
     constructor(private router: Router) { }
 
-    rebuildRoutes(url: string) {
+    /**
+     * Rebuilds the child breadcrumbs based on the url given. Assumes that the route passed in starts with
+     * the base route.
+     *
+     * @param url
+     */
+    rebuildChildCrumbs(url: string) {
         let routes: string[] = url.slice(1).split('/');
 
-        if (routes.length === 0 || routes[0] !== this.baseRoute)
+        if (routes.length === 0 || routes[0] !== this.baseRoute.slice(1))
             throw new Error('Attempted to rebuild route hierarchy that did not start with the specified base route. ' +
                 'Expected: ' + this.baseRoute + ' Actual: ' + routes[0]);
 
+        // Reset the children crumbs to rebuild
+        this.childrenCrumbs = [];
 
+        // Create the child crumbs, skipping the base crumb
+        for (let i = 1; i < routes.length; i++)
+            this.childrenCrumbs.push(this.getBreadCrumb(routes[i]));
     }
 
     /**
@@ -37,7 +52,8 @@ export class BreadcrumbsComponent {
      * @returns {Breadcrumb}
      */
     getBreadCrumb(route: string): Breadcrumb {
-        let label = route.slice(1).split('-').join(' ').titleize();
+        let label = route.indexOf('/') === 0 ? route.slice(1) : route;
+        label = label.split('-').join(' ').titleize();
 
         if (this.labelMap && this.labelMap.get(route))
             label = this.labelMap.get(route);
@@ -52,6 +68,14 @@ export class BreadcrumbsComponent {
         // Add the base crumb that the user can always go back to
         this.baseCrumb = this.getBreadCrumb(this.baseRoute);
 
-        // Listen for route changes, only concerning route changes below baseRoute
+        // Listen for route changes, only concerning route changes at or below baseRoute
+        this.routeSubscription = this.router.events.subscribe((route) => {
+            if (route.url.startsWith(this.baseRoute))
+                this.rebuildChildCrumbs(route.url);
+        });
+    }
+
+    ngOnDestroy() {
+        this.routeSubscription.unsubscribe();
     }
 }

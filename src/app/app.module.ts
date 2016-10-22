@@ -12,11 +12,13 @@ import {
     AboutComponent,
     BlogComponent,
     BlogHomeComponent,
-    SoftwareBlogComponent,
+    BlogTopicComponent,
     ContactComponent,
     ProfileComponent } from './main';
 
-import { BreadcrumbsComponent } from './shared/component';
+import { BreadcrumbsComponent, SpinnerComponent } from './shared/component';
+
+import { BlogService } from './shared/service';
 
 import './shared/util/string-utils';
 
@@ -27,10 +29,11 @@ import './shared/util/string-utils';
         AboutComponent,
         BlogComponent,
         BlogHomeComponent,
-        SoftwareBlogComponent,
+        BlogTopicComponent,
         ContactComponent,
         ProfileComponent,
-        BreadcrumbsComponent
+        BreadcrumbsComponent,
+        SpinnerComponent
     ],
     imports: [
         BrowserModule,
@@ -39,7 +42,7 @@ import './shared/util/string-utils';
         AppRoutingModule,
         MaterialModule.forRoot()
     ],
-    providers: [],
+    providers: [BlogService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -13,6 +13,7 @@ import {
     BlogComponent,
     BlogHomeComponent,
     BlogTopicComponent,
+    BlogListComponent,
     ContactComponent,
     ProfileComponent } from './main';
 
@@ -30,6 +31,7 @@ import './shared/util/string-utils';
         BlogComponent,
         BlogHomeComponent,
         BlogTopicComponent,
+        BlogListComponent,
         ContactComponent,
         ProfileComponent,
         BreadcrumbsComponent,

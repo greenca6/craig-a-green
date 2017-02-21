@@ -1,10 +1,10 @@
-import { CraigAGreenPage } from './app.po';
+import { CraigGreenPage } from './app.po';
 
-describe('craig-a-green App', function() {
-  let page: CraigAGreenPage;
+describe('craig-green App', () => {
+  let page: CraigGreenPage;
 
   beforeEach(() => {
-    page = new CraigAGreenPage();
+    page = new CraigGreenPage();
   });
 
   it('should display message saying app works', () => {

@@ -31,6 +31,17 @@ export class BlogService {
     }
 
     getBlogsByTopic(topic: BlogTopic): Observable<Blog[]> {
-        return Observable.of([]).delay(1500);
+        let blogs: Blog[] = [];
+        let b: Blog = new Blog();
+
+        b.id = 1;
+        b.title = 'Test Blog';
+        b.createdOn = new Date();
+        b.topicId = 1;
+        b.relUrl = 'test-blog';
+
+        blogs.push(b);
+
+        return Observable.of(blogs).delay(1500);
     }
 }

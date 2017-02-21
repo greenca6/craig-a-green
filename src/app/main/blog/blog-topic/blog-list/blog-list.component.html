@@ -1,0 +1,6 @@
+<ul *ngIf="blogs">
+    <li *ngFor="let blog of blogs">
+        <h3>{{blog.title}}</h3>
+        <p>{{blog.createdOn | date}}</p>
+    </li>
+</ul>

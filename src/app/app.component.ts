@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'cag-root',
   templateUrl: './app.component.html',
-  styleUrls: ['app.component.less']
+  styleUrls: ['app.component.scss']
 })
 export class AppComponent implements OnInit {
     private sidebarCollapsed: boolean = true;

@@ -1,0 +1,24 @@
+@import 'variables.scss';
+@import './type';
+@import 'forms.scss';
+@import 'icons.scss';
+@import 'material.scss';
+
+
+body {
+  background-color: $primary1;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.accent-color {
+    color: $accent1;
+}
+
+::selection {
+  background: rgba(red($accent1), green($accent1), blue($accent1), 0.3);
+}
+
+::-moz-selection {
+  background: rgba(red($accent1), green($accent1), blue($accent1), 0.3);
+}

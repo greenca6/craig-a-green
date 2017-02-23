@@ -1,50 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { MaterialModule } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import {
-    HomeComponent,
-    AboutComponent,
-    BlogComponent,
-    BlogHomeComponent,
-    BlogTopicComponent,
-    BlogListComponent,
-    ContactComponent,
-    ProfileComponent } from './main';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { ProfileComponent } from './profile/profile.component';
 
-import { BreadcrumbsComponent, SpinnerComponent } from './shared/component';
+import { BlogModule } from './blog/';
 
-import { BlogService } from './shared/service';
-
-import './shared/util/string-utils';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        HomeComponent,
-        AboutComponent,
-        BlogComponent,
-        BlogHomeComponent,
-        BlogTopicComponent,
-        BlogListComponent,
-        ContactComponent,
-        ProfileComponent,
-        BreadcrumbsComponent,
-        SpinnerComponent
-    ],
-    imports: [
-        BrowserModule,
-        FormsModule,
-        HttpModule,
-        AppRoutingModule,
-        MaterialModule.forRoot()
-    ],
-    providers: [BlogService],
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent,
+    ProfileComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BlogModule
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,16 @@
+<h1 class="page-header">Topics of Interest</h1>
+<p>Some shitty intro about the shitty topics on this shitty blog</p>
+
+<cag-spinner *ngIf="!topics"></cag-spinner>
+
+<div *ngIf="topics" class="row">
+    <div *ngFor="let topic of topics" class="col-md-3">
+        <md-card routerLink="/blog/{{topic.relUrl}}">
+            <img md-card-image src="assets/img/{{topic.previewImage}}">
+            <md-card-title>{{topic.name}}</md-card-title>
+            <md-card-content>
+                <p>{{topic.description}}</p>
+            </md-card-content>
+        </md-card>
+    </div>
+</div>

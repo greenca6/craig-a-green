@@ -1,8 +1,10 @@
-@import 'variables.scss';
+@import '~@angular/material/core/theming/all-theme';
+
+@import './variables';
 @import './type';
-@import 'forms.scss';
-@import 'icons.scss';
-@import 'material.scss';
+@import './forms';
+@import './icons';
+@import './material';
 
 
 body {

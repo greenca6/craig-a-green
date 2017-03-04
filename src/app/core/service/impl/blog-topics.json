@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "description": "Focusing primarily on web development",
+    "previewImage": "keyboard.jpeg",
+    "name": "Software Development",
+    "relUrl": "software-development"
+  },
+  {
+    "id": 2,
+    "description": "Team methodologies for building effective software.",
+    "previewImage": "keyboard.jpeg",
+    "name": "Software Engineering Methodologies",
+    "relUrl": "software-methodologies"
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "title": "Angular 2 I: Is It Right For You?",
+    "createdOn": "2017-02-23",
+    "topicId": 1,
+    "relUrl": "angular-2-1",
+    "content": "Blah blah blah blah blah blah..."
+  },
+  {
+    "id": 2,
+    "title": "Angular 2 II: Getting Started",
+    "createdOn": "2017-02-23",
+    "topicId": 1,
+    "relUrl": "angular-2-2",
+    "content": "Blah blah blah blah blah blah..."
+  },
+  {
+    "id": 3,
+    "title": "Angular 2 III: Your First Application",
+    "createdOn": "2017-02-23",
+    "topicId": 1,
+    "relUrl": "angular-2-3",
+    "content": "Blah blah blah blah blah blah..."
+  },
+  {
+    "id": 4,
+    "title": "Angular 2 IV: Your Second Application",
+    "createdOn": "2017-02-23",
+    "topicId": 1,
+    "relUrl": "angular-2-4",
+    "content": "Blah blah blah blah blah blah..."
+  },
+  {
+    "id": 5,
+    "title": "Angular 2 V: Unit Testing & Large Scale Design Decisions",
+    "createdOn": "2017-02-23",
+    "topicId": 1,
+    "relUrl": "angular-2-5",
+    "content": "Blah blah blah blah blah blah..."
+  },
+  {
+    "id": 6,
+    "title": "Spring: Essentials & High Level Look",
+    "createdOn": "2017-02-23",
+    "topicId": 1,
+    "relUrl": "spring-1",
+    "content": "Blah blah blah blah blah blah..."
+  },
+  {
+    "id": 7,
+    "title": "Spring: Your First Application",
+    "createdOn": "2017-02-23",
+    "topicId": 1,
+    "relUrl": "spring-2",
+    "content": "Blah blah blah blah blah blah..."
+  },
+  {
+    "id": 8,
+    "title": "Spring: Building a RESTful Interface",
+    "createdOn": "2017-02-23",
+    "topicId": 1,
+    "relUrl": "spring-3",
+    "content": "Blah blah blah blah blah blah..."
+  },
+  {
+    "id": 9,
+    "title": "Spring: Unit Testing With Mockito",
+    "createdOn": "2017-02-23",
+    "topicId": 1,
+    "relUrl": "spring-4",
+    "content": "Blah blah blah blah blah blah..."
+  },
+  {
+    "id": 10,
+    "title": "Waterfall: Complaints, Admirations, Notices",
+    "createdOn": "2017-02-23",
+    "topicId": 2,
+    "relUrl": "waterfall-complaints-admirations-notices",
+    "content": "Blah blah blah blah blah blah..."
+  },
+  {
+    "id": 11,
+    "title": "Agile: Complaints, Admirations, Notices",
+    "createdOn": "2017-02-23",
+    "topicId": 2,
+    "relUrl": "agile-complaints-admirations-notices",
+    "content": "Blah blah blah blah blah blah..."
+  }
+]

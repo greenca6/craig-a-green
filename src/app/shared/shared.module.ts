@@ -9,8 +9,6 @@ import { CoreModule } from '../core/';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 
-import './util/string-utils';
-
 
 @NgModule({
   imports: [

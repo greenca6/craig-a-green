@@ -11,7 +11,7 @@ $width: 100px;
   margin: auto;
 }
 
-.circular{
+.circular {
   animation: rotate 2s linear infinite;
   height: $width;
   position: relative;
@@ -26,12 +26,12 @@ $width: 100px;
   stroke: $accent1
 }
 
-@keyframes rotate{
-  100%{
+@keyframes rotate {
+  100% {
     transform: rotate(360deg);
   }
 }
-@keyframes dash{
+@keyframes dash {
   0%{
     stroke-dasharray: 1,200;
     stroke-dashoffset: 0;

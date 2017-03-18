@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 
 
@@ -8,27 +8,28 @@ import { Router } from '@angular/router';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent implements OnInit {
-    private sidebarCollapsed: boolean = true;
-    private headerExploded: boolean = true;
+  private sidebarCollapsed: boolean = true;
+  private headerExploded: boolean = true;
 
-    constructor(private router: Router) { }
+  constructor(private router: Router) {
+  }
 
-    ngOnInit() {
-        this.router.events.subscribe((route) => {
-            this.headerExploded = (route.url === '/');
-        });
+  ngOnInit() {
+    this.router.events.subscribe((route) => {
+      this.headerExploded = (route.url === '/');
+    });
+  }
 
-        // Scroll watcher
-        jQuery(window).on('scroll', () => {
-            if (this.router.url !== '/')
-                return false;
+  @HostListener("window:scroll", [])
+  onWindowScroll() {
+    if (this.router.url !== '/')
+      return;
 
-            let quarterHeight: number = window.innerHeight / 4;
-            this.headerExploded = jQuery(window).scrollTop() <= quarterHeight;
-        });
-    }
+    let quarterHeight = window.innerHeight / 4;
+    this.headerExploded = (window.scrollY <= quarterHeight);
+  }
 
-    toggleCollapse(): void {
-        this.sidebarCollapsed = !this.sidebarCollapsed;
-    }
+  toggleCollapse(): void {
+    this.sidebarCollapsed = !this.sidebarCollapsed;
+  }
 }

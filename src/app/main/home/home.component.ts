@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    jQuery('#splash').height(window.innerHeight + 'px');
+    document.getElementById('splash').style.height = window.innerHeight + 'px';
   }
 
 }

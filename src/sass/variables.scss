@@ -5,7 +5,7 @@ $primary3: lighten($primary1, 20%);
 
 // Accent Colors
 $accent1: #8BC34A;
-$accent2: #689F38;
+$accent2: darken($accent1, 10%);
 
 // Font Colors
 $primaryContrast: #000;

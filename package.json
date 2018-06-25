@@ -1,50 +1,46 @@
 {
   "name": "greenca6.github.io",
-  "version": "0.0.1",
-  "license": "MIT",
-  "angular-cli": {},
+  "version": "0.1.0",
+  "description": "Personal & Professional Website of Craig A. Green",
+  "main": "src/index.jsx",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve --env=test",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "start": "node ./scripts/start.js",
+    "test": "node ./scripts/test.js",
+    "build": "node ./scripts/build.js"
   },
-  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greenca6/greenca6.github.io.git"
+  },
+  "author": "Craig Green <greenca6@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/greenca6/greenca6.github.io/issues"
+  },
+  "homepage": "https://github.com/greenca6/greenca6.github.io#readme",
   "dependencies": {
-    "@angular/common": "^2.4.0",
-    "@angular/compiler": "^2.4.0",
-    "@angular/core": "^2.4.0",
-    "@angular/forms": "^2.4.0",
-    "@angular/http": "^2.4.0",
-    "@angular/material": "^2.0.0-beta.2",
-    "@angular/platform-browser": "^2.4.0",
-    "@angular/platform-browser-dynamic": "^2.4.0",
-    "@angular/router": "^3.4.0",
-    "bootstrap": "^3.3.7",
-    "core-js": "^2.4.1",
-    "hammerjs": "^2.0.8",
-    "rxjs": "^5.1.0",
-    "zone.js": "^0.7.6"
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.0-beta.32.3",
-    "@angular/compiler-cli": "^2.4.0",
-    "@types/jasmine": "2.5.38",
-    "@types/jquery": "^2.0.40",
-    "@types/node": "~6.0.60",
-    "codelyzer": "~2.0.0-beta.4",
-    "jasmine-core": "~2.5.2",
-    "jasmine-spec-reporter": "~3.2.0",
-    "karma": "~1.4.1",
-    "karma-chrome-launcher": "~2.0.0",
-    "karma-cli": "~1.0.1",
-    "karma-coverage-istanbul-reporter": "^0.2.0",
-    "karma-jasmine": "~1.1.0",
-    "karma-jasmine-html-reporter": "^0.2.2",
-    "protractor": "~5.1.0",
-    "ts-node": "~2.0.0",
-    "tslint": "~4.4.2",
-    "typescript": "~2.0.0"
+    "autoprefixer": "^8.6.3",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-react-jsx-source": "^6.22.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-react-hmre": "^1.1.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "eslint": "^5.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.12.1",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-hot-middleware": "^2.22.2"
   }
 }

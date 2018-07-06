@@ -1,0 +1,109 @@
+@import '../bootstrap.overrides';
+
+// TODO: redo this shit, this is terrible
+$headerHeight: 70px;
+$headerFontColor: #ffffff;
+
+.navbar {
+  background-color: $primary;
+  position: fixed;
+  height: $headerHeight;
+  margin-bottom: 0;
+  width: 100%;
+  border-radius: 0;
+  font-family: $headings-font-family;
+  border: 0;
+  z-index: 1;
+  transition: all $transitionTime ease;
+  box-shadow:         0 2px 5px rgba(0, 0, 0, 0.15);
+
+  a {
+    color: $headerFontColor;
+    padding: 25px 15px;
+    transition: all $transitionTime ease;
+  }
+
+  a:hover {
+    transition: all $transitionTime ease;
+    background-color: transparent;
+    outline: 0;
+  }
+
+  a:focus {
+    transition: all $transitionTime ease;
+    background-color: transparent;
+    outline: 0;
+  }
+
+  .navbar-header {
+    .navbar-brand {
+      text-transform: none;
+      font-weight: normal;
+      font-size: 20px;
+      height: 100%;
+      -webkit-transition: all $transitionTime ease;
+      -moz-transition: all $transitionTime ease;
+      -ms-transition: all $transitionTime ease;
+      -o-transition: all $transitionTime ease;
+      transition: all $transitionTime ease;
+      cursor: pointer;
+      font-weight: bold;
+      color: $headerFontColor;
+    }
+
+    .navbar-toggle {
+      padding: 13px 10px;
+
+      .icon-bar {
+        background-color: $headerFontColor;
+        width: 30px;
+      }
+
+      .icon-bar + .icon-bar {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .collapse.navbar-collapse {
+
+    .nav.navbar-nav {
+      float: right;
+
+      li {
+        margin-left: 30px;
+        text-align: center;
+
+        a {
+          font-weight: bold;
+          color: $headerFontColor;
+          text-transform: uppercase;
+        }
+
+        a:hover {
+          color: $headerFontColor;
+          background-color: lighten($primary, 5%);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+header.exploded {
+  background-color: transparent;
+  border: 0;
+  box-shadow: 0 3px 5px transparent;
+
+  .navbar-header {
+    display: none;
+
+    .navbar-brand {
+      color: transparent;
+    }
+
+    .navbar-toggle .icon-bar {
+      background-color: $primary;
+    }
+  }
+}

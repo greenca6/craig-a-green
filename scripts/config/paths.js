@@ -13,5 +13,7 @@ module.exports = {
   INDEX_SCSS: path.resolve(APP_ROOT, 'src/index.scss'),
   NODE_MODULES: path.resolve(APP_ROOT, 'node_modules'),
   PACKAGE_JSON: path.resolve(APP_ROOT, 'package.json'),
+  POSTS_DIR: path.resolve(APP_ROOT, 'posts'),
   SRC: path.resolve(APP_ROOT, 'src'),
+  STATIC_DIR: path.resolve(APP_ROOT, 'static'),
 };

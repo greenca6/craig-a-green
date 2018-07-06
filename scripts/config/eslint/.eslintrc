@@ -23,6 +23,9 @@
       "required": {
         "some": [ "nesting", "id" ]
       }
-    }]
+    }],
+    "react/jsx-one-expression-per-line": 0,
+    "react/forbid-prop-types": 0,
+    "import/prefer-default-export": 0
   }
 }

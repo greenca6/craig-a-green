@@ -1,39 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => (
-  <footer>
+  <footer className="bg-light border-top border-primary py-4">
     <div className="container">
       <div className="row">
         <div className="col-md-6">
-          <div className="footer-section">
-            <h5>Connect</h5>
-            <div className="row">
-              <div className="col-md-12">
-                <a href="http://facebook.com" className="social-media-icon">
-                  <img alt="" className="icon" src="assets/img/facebook.svg" />
-                </a>
-                <a href="http://twitter.com" className="social-media-icon">
-                  <img alt="" className="icon" src="assets/img/twitter.svg" />
-                </a>
-                <a href="http://linkedin.com" className="social-media-icon">
-                  <img alt="" className="icon" src="assets/img/linked_in.svg" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-6">
-          <div className="footer-section">
-            <h5>Navigate</h5>
-            <div className="row">
-              <div className="col-xs-6">
-                <a href="/">About</a><br />
-                <a href="/">Profile</a>
-              </div>
-              <div className="col-xs-6">
-                <a href="/">Blog</a><br />
-                <a href="/">Contact</a>
-              </div>
+          <h5>Navigate</h5>
+          <div className="row">
+            <div className="col-sm-6">
+              <Link to="/profile" href="/profile">Profile</Link><br />
+              <Link to="/blog" href="/blog">Blog</Link><br />
+              <Link to="/contact" href="/contact">Contact</Link>
             </div>
           </div>
         </div>

@@ -1,24 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-const Header = ({ exploded }) => (
-  <header className={`navbar${exploded ? ' exploded' : ''}`}>
+const Header = ({ onTogglerClick }) => (
+  <header className="navbar navbar-expand-md fixed-top">
     <div className="container">
       <div className="navbar-header">
-        <button type="button" className="navbar-toggle collapsed">
-          <span className="sr-only">Toggle navigation</span>
-          <span className="icon-bar" />
-          <span className="icon-bar" />
-          <span className="icon-bar" />
-        </button>
         <a className="navbar-brand" href="/">craig a. green</a>
       </div>
+      <button onClick={onTogglerClick} type="button" className="navbar-toggler collapsed">
+        <span className="sr-only">Toggle navigation</span>
+        <span className="icon-bar" />
+        <span className="icon-bar" />
+        <span className="icon-bar" />
+      </button>
       <div className="collapse navbar-collapse">
-        <ul className="nav navbar-nav">
-          <li><a href="/about">About</a></li>
-          <li><a href="/profile">Profile</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/contact">Contact</a></li>
+        <ul className="nav navbar-nav ml-auto">
+          <li><Link to="/profile" href="/profile">Profile</Link></li>
+          <li><Link to="/blog" href="/blog">Blog</Link></li>
+          <li><Link to="/contact" href="/contact">Contact</Link></li>
         </ul>
       </div>
     </div>
@@ -26,11 +26,11 @@ const Header = ({ exploded }) => (
 );
 
 Header.propTypes = {
-  exploded: PropTypes.bool,
+  onTogglerClick: PropTypes.func,
 };
 
 Header.defaultProps = {
-  exploded: false,
+  onTogglerClick: null,
 };
 
 export default Header;

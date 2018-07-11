@@ -1,0 +1,64 @@
+@import '../bootstrap.overrides';
+
+$sidebar-width: 275px;
+$sidebar-font-color: $primary;
+
+// Sidebar
+aside {
+  background-color: #fff;
+  height: 100%;
+  width: $sidebar-width;
+  position: fixed;
+  right: -($sidebar-width * 2);
+  transition: right $transition-time ease;
+  font-family: $headings-font-family;
+  z-index: 1031; // one higher than the .fixed-top BS class
+  box-shadow: -5px 0 12px rgba(0, 0, 0, 0.15);
+
+  button.btn {
+    float: left;
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: 0 solid transparent;
+    font-weight: lighter;
+  }
+
+  ul {
+    padding: 0 15px;
+    list-style-type: none;
+    float: left;
+    width: 100%;
+
+    li {
+      border-bottom: 2px solid darken(#fff, 5%);
+
+      a {
+        text-align: center;
+        display: block;
+        width: 100%;
+        padding: 20px 10px;
+        color: $sidebar-font-color;
+        font-size: 18px;
+        transition: right $transition-time ease;
+
+        &:hover {
+          text-decoration: none;
+          cursor: pointer;
+          color: darken($primary, 10%);
+        }
+
+        &:active {
+          text-decoration: none;
+        }
+
+        &:focus {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+aside.open {
+  right: 0;
+}

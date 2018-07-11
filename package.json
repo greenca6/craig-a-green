@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/greenca6/greenca6.github.io/issues"
   },
-  "homepage": "https://github.com/greenca6/greenca6.github.io#readme",
+  "homepage": "https://github.com/greenca6/greenca6.github.io",
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.1.1",
@@ -52,6 +52,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.10.0",
     "file-loader": "^1.1.11",
+    "fs-utils": "^0.7.0",
     "html-webpack-plugin": "^2.30.1",
     "interpolate-html-plugin": "^2.0.0",
     "jest": "^23.2.0",
@@ -62,11 +63,13 @@
     "remark-frontmatter": "^1.2.0",
     "remark-html": "^7.0.0",
     "remark-parse": "^5.0.0",
+    "remark-parse-yaml": "0.0.1",
     "remark-preset-lint-markdown-style-guide": "^2.1.2",
     "sass-lint": "^1.12.1",
     "sass-loader": "^7.0.3",
     "sasslint-webpack-plugin": "^1.0.4",
     "style-loader": "^0.21.0",
+    "to-vfile": "^5.0.0",
     "uglifyjs-webpack-plugin": "^1.2.7",
     "url-loader": "^1.0.1",
     "webpack": "^3.12.0",
